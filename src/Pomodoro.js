@@ -67,29 +67,27 @@ const Pomodoro = () => {
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
   return (
-    <div className="row mt-5">
-      <div className="">
-        <form
-          className="form-group"
-          onSubmit={(e) => {
-            e.preventDefault();
-            startSession();
-          }}
-        >
-          <input
-            id="input"
-            placeholder="sessions"
-            value={sessions}
-            onChange={(e) => setSessions(e.target.value)}
-          />
-          <button className="btn btn-warning m-2">Start</button>
-        </form>
-        <div className="message display-3">
-          {displayMessage && <div>Break time! New session starts in:</div>}
-        </div>
-        <div className="display-1">
-          {timerMinutes}:{timerSeconds}
-        </div>
+    <div>
+      <form
+        className="form-group"
+        onSubmit={(e) => {
+          e.preventDefault();
+          startSession();
+        }}
+      >
+        <input
+          id="input"
+          placeholder="sessions"
+          value={sessions}
+          onChange={(e) => setSessions(e.target.value)}
+        />
+        <button className="btn btn-warning m-2">Start</button>
+      </form>
+      <div className="message display-3">
+        {displayMessage && <div>Break time! New session starts in:</div>}
+      </div>
+      <div className="display-1">
+        {timerMinutes}:{timerSeconds}
       </div>
     </div>
   );
